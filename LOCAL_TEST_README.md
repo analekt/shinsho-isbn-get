@@ -46,7 +46,6 @@ python scripts/local_test.py [オプション]
 #### 主なオプション:
 
 - `--sample`: サンプルモード（処理件数を制限）
-- `--full-refresh`: 全データを再取得
 - `--output-dir OUTPUT_DIR`: 出力ディレクトリを指定（デフォルト: ./output）
 - `--cache-dir CACHE_DIR`: キャッシュディレクトリを指定（デフォルト: ./data）
 - `--server`: ローカルWebサーバーを起動
@@ -65,11 +64,6 @@ python scripts/local_test.py [オプション]
 2. ローカルサーバーを起動してブラウザで結果を確認:
    ```bash
    python scripts/local_test.py --server --browser
-   ```
-
-3. 完全更新モードでテスト:
-   ```bash
-   python scripts/local_test.py --full-refresh --browser
    ```
 
 4. 既存データの表示（APIリクエストなし）:

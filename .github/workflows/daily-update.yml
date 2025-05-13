@@ -65,24 +65,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
           
-      - name: 月次の完全更新（毎月1日）
-        if: github.event_name == 'schedule' && startsWith(github.event.schedule, '0 18 1 * *')
-        run: |
-          echo "毎月1日の完全更新を実行します"
-          python scripts/main.py \
-            --data-dir ./data \
-            --output-dir ./docs \
-            --feed-url "https://analekt.github.io/shinsho-isbn-get/feed.xml" \
-            --site-url "https://analekt.github.io/shinsho-isbn-get/" \
-            --title "新書RSS" \
-            --description "OpenBD APIから取得した新しい新書の情報" \
-            --full-refresh
-          
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add data/ docs/
-          git diff --staged --quiet || git commit -m "🔄 新書情報の完全更新 $(date +'%Y-%m-%d')"
-          git push -u origin main 
-
       - name: ブランチ名をmainに変更
         run: git branch -M main 
