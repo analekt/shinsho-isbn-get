@@ -2,8 +2,8 @@ name: 新書情報更新
 
 on:
   schedule:
-    # 週3回実行（月・水・金の日本時間午前3時 = UTC 18:00）
-    - cron: '0 18 * * 0,2,4'
+    # 毎日午前5時（JST）に実行（JST=UTC+9 → UTC 20:00 前日）
+    - cron: '0 20 * * *'
   workflow_dispatch:  # 手動実行用トリガー
 
 jobs:
@@ -46,8 +46,8 @@ jobs:
           python scripts/main.py \
             --data-dir ./data \
             --output-dir ./docs \
-            --feed-url "https://${{ github.repository_owner }}.github.io/shinsho-isbn-get/feed.xml" \
-            --site-url "https://${{ github.repository_owner }}.github.io/shinsho-isbn-get/" \
+            --feed-url "https://analekt.github.io/shinsho-isbn-get/feed.xml" \
+            --site-url "https://analekt.github.io/shinsho-isbn-get/" \
             --title "新書RSS" \
             --description "OpenBD APIから取得した新しい新書の情報" \
             --clean-cache
@@ -72,8 +72,8 @@ jobs:
           python scripts/main.py \
             --data-dir ./data \
             --output-dir ./docs \
-            --feed-url "https://${{ github.repository_owner }}.github.io/shinsho-isbn-get/feed.xml" \
-            --site-url "https://${{ github.repository_owner }}.github.io/shinsho-isbn-get/" \
+            --feed-url "https://analekt.github.io/shinsho-isbn-get/feed.xml" \
+            --site-url "https://analekt.github.io/shinsho-isbn-get/" \
             --title "新書RSS" \
             --description "OpenBD APIから取得した新しい新書の情報" \
             --full-refresh
