@@ -82,4 +82,7 @@ jobs:
           git config --local user.name "GitHub Action"
           git add data/ docs/
           git diff --staged --quiet || git commit -m "🔄 新書情報の完全更新 $(date +'%Y-%m-%d')"
-          git push 
+          git push -u origin main 
+
+      - name: ブランチ名をmainに変更
+        run: git branch -M main 
