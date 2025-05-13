@@ -1,0 +1,43 @@
+# OpenBD API RSS生成設定
+
+# API制限関連設定
+api:
+  # APIリクエスト間の待機時間（秒）
+  base_wait_time: 0.5
+  # バックオフ時の最大待機時間（秒）
+  max_wait_time: 8.0
+  # APIリクエストのタイムアウト時間（秒）
+  timeout: 30
+  # リクエスト失敗時の最大リトライ回数
+  max_retries: 3
+
+# データとキャッシュの設定
+cache:
+  # キャッシュのデフォルトディレクトリ
+  dir: "./data"
+  # 書籍データのキャッシュ有効期間（日）
+  books_max_age_days: 30
+  # ISBN一覧のキャッシュ有効期間（時間）
+  coverage_max_age_hours: 24
+  # 古いキャッシュファイルの保持期間（日）
+  cleanup_older_than_days: 90
+
+# 処理の設定
+processing:
+  # 一括処理のチャンクサイズ
+  chunk_size: 100
+  # サンプルモード時の最大処理件数 
+  sample_limit: 500
+  # 新書のCコード/ジャンルコードのプレフィックス
+  shinsho_c_code_prefix: "02"
+
+# 出力設定
+output:
+  # 出力先ディレクトリ 
+  dir: "./docs"
+  # RSSフィードのデフォルトタイトル
+  title: "新書RSS"
+  # RSSフィードの説明
+  description: "OpenBD APIから取得した新しい新書の情報"
+  # RSS保存ファイル名
+  filename: "feed.xml" 

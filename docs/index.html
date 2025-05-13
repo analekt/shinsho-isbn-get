@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新書RSS</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        .rss-link {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #FF8C00;
+            color: white;
+            padding: 5px 15px;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+        .rss-link:hover {
+            background-color: #e67e00;
+        }
+        .loading {
+            text-align: center;
+            padding: 30px;
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>新書RSS</h1>
+    <p>OpenBD APIから取得した新しい新書の情報を提供するRSSフィードです。毎日更新されます。</p>
+    
+    <a href="feed.xml" class="rss-link">RSSフィードを購読</a>
+    
+    <h2>最新の新書</h2>
+    <div class="loading">
+        まだ新書情報がありません。初回の更新をお待ちください。
+    </div>
+    
+    <footer>
+        <p>このページは<a href="https://openbd.jp/">OpenBD</a>のデータを使用しています。</p>
+    </footer>
+</body>
+</html> 

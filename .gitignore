@@ -1,0 +1,24 @@
+# Pythonキャッシュ
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# VSCodeやIDEの設定
+.vscode/
+.idea/
+
+# テスト用・生成ファイル
+output/
+data/
+
+# サンプル・テストスクリプト
+scripts/sample_data.py
+local_test.sh
+local_test.bat
+local_test_win.bat
+local_test_en.bat
+
+# その他
+*.log
+.DS_Store 
